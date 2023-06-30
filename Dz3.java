@@ -40,19 +40,41 @@ public class Dz3 {
         int phone = 0;
         char gender = 'a';
         boolean flag = false;
-
+//ввод ФИО
         while (!flag) {
             Scanner scan = new Scanner(System.in);
             System.out.println("Введите ФИО: ");
             name = scan.nextLine();
-            String[] splited = name.split(" ");
-            if (splited.length == 3) {
-                for (int i = 0; i < splited.length; i++) {
-                    System.out.println(splited[i]);
+            String[] splitedName = name.split(" ");
+            if (splitedName.length == 3) {
+                for (int i = 0; i < splitedName.length; i++) {
+                    System.out.println(splitedName[i]);
+                }
+                flag = true;
+                //scan.close();
+            } else System.out.println("Введите ФИО, разделяя пробелами");
+           // scan.close();
+        }
+        //ввод даты рождения
+        flag = false;
+        while (!flag) {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Введите дату рождения в формате: dd.mm.yyyy: ");
+            dateOfBirth = scan.nextLine();
+            String[] splitedDateOfBirth = dateOfBirth.split(".");
+            if ((splitedDateOfBirth.length == 3)&(Integer.parseInt(splitedDateOfBirth[0])<32)&(Integer.parseInt(splitedDateOfBirth[0])>0)&(Integer.parseInt(splitedDateOfBirth[1])>0)&(Integer.parseInt(splitedDateOfBirth[1])<13)&(Integer.parseInt(splitedDateOfBirth[2])>0)&(Integer.parseInt(splitedDateOfBirth[2])<2024)) {
+                for (int i = 0; i < splitedDateOfBirth.length; i++) {
+                    System.out.println(splitedDateOfBirth[i]);
                 }
                 flag = true;
                 scan.close();
             } else System.out.println("Введите ФИО, разделяя пробелами");
         }
+
+        //ввод телефона
+
+        //ввод пола
+
+
     }
 }
