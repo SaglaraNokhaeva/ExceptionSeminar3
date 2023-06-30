@@ -53,7 +53,7 @@ public class Dz3 {
                 flag = true;
                 //scan.close();
             } else System.out.println("Введите ФИО, разделяя пробелами");
-           // scan.close();
+            // scan.close();
         }
         //ввод даты рождения
         flag = false;
@@ -62,13 +62,13 @@ public class Dz3 {
             System.out.println("Введите дату рождения в формате: dd.mm.yyyy: ");
             dateOfBirth = scan.nextLine();
             String[] splitedDateOfBirth = dateOfBirth.split(".");
-            if ((splitedDateOfBirth.length == 3)&(Integer.parseInt(splitedDateOfBirth[0])<32)&(Integer.parseInt(splitedDateOfBirth[0])>0)&(Integer.parseInt(splitedDateOfBirth[1])>0)&(Integer.parseInt(splitedDateOfBirth[1])<13)&(Integer.parseInt(splitedDateOfBirth[2])>0)&(Integer.parseInt(splitedDateOfBirth[2])<2024)) {
+            if ((splitedDateOfBirth.length == 3) & (Integer.parseInt(splitedDateOfBirth[0]) < 32) & (Integer.parseInt(splitedDateOfBirth[0]) > 0) & (Integer.parseInt(splitedDateOfBirth[1]) > 0) & (Integer.parseInt(splitedDateOfBirth[1]) < 13) & (Integer.parseInt(splitedDateOfBirth[2]) > 0) & (Integer.parseInt(splitedDateOfBirth[2]) < 2024)) {
                 for (int i = 0; i < splitedDateOfBirth.length; i++) {
                     System.out.println(splitedDateOfBirth[i]);
                 }
                 flag = true;
                 scan.close();
-            } else System.out.println("Введите ФИО, разделяя пробелами");
+            } else System.out.println("Введите дату рождения в формате: dd.mm.yyyy: ");
         }
 
         //ввод телефона
