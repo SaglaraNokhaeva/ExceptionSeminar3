@@ -37,9 +37,12 @@ public class Dz3 {
     public static void main(String[] args) {
         String name = null;
         String dateOfBirth = null;
-        int phone = 0;
+        //Long phone = 0;
         char gender = 'a';
         boolean flag = false;
+
+        /*
+
 //ввод ФИО
         while (!flag) {
             Scanner scan = new Scanner(System.in);
@@ -55,23 +58,39 @@ public class Dz3 {
             } else System.out.println("Введите ФИО, разделяя пробелами");
             // scan.close();
         }
+
+
+
         //ввод даты рождения
         flag = false;
         while (!flag) {
             Scanner scan = new Scanner(System.in);
             System.out.println("Введите дату рождения в формате: dd.mm.yyyy: ");
             dateOfBirth = scan.nextLine();
-            String[] splitedDateOfBirth = dateOfBirth.split(".");
-            if ((splitedDateOfBirth.length == 3) & (Integer.parseInt(splitedDateOfBirth[0]) < 32) & (Integer.parseInt(splitedDateOfBirth[0]) > 0) & (Integer.parseInt(splitedDateOfBirth[1]) > 0) & (Integer.parseInt(splitedDateOfBirth[1]) < 13) & (Integer.parseInt(splitedDateOfBirth[2]) > 0) & (Integer.parseInt(splitedDateOfBirth[2]) < 2024)) {
+            String[] splitedDateOfBirth = dateOfBirth.split("\\.");
+            if ((splitedDateOfBirth.length == 3)& (Integer.parseInt(splitedDateOfBirth[0]) < 32) & (Integer.parseInt(splitedDateOfBirth[0]) > 0) & (Integer.parseInt(splitedDateOfBirth[1]) > 0) & (Integer.parseInt(splitedDateOfBirth[1]) < 13) & (Integer.parseInt(splitedDateOfBirth[2]) > 0) & (Integer.parseInt(splitedDateOfBirth[2]) < 2024)) {
                 for (int i = 0; i < splitedDateOfBirth.length; i++) {
                     System.out.println(splitedDateOfBirth[i]);
                 }
                 flag = true;
                 scan.close();
-            } else System.out.println("Введите дату рождения в формате: dd.mm.yyyy: ");
+            }
         }
-
+*/
         //ввод телефона
+
+        flag = false;
+        while (!flag) {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Введите номер телефона +7 ");
+            String phoneStr = scan.nextLine();
+            if (phoneStr.length()==10) {
+               Long phone = Long.parseLong(phoneStr);
+                flag = true;
+                scan.close();
+                System.out.println(phone+80000000000);
+            }
+        }
 
         //ввод пола
 
