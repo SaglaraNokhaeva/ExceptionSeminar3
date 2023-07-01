@@ -82,13 +82,13 @@ public class Dz3 {
         flag = false;
         while (!flag) {
             Scanner scan = new Scanner(System.in);
-            System.out.println("Введите номер телефона +7 ");
+            System.out.println("Введите номер телефона XXXXXXXXXXX: ");
             String phoneStr = scan.nextLine();
-            if (phoneStr.length()==10) {
+            if (phoneStr.length()==11) {
                Long phone = Long.parseLong(phoneStr);
                 flag = true;
                 scan.close();
-                System.out.println(phone+80000000000);
+                System.out.println(phone);
             }
         }
 
