@@ -34,78 +34,69 @@
 import java.util.Scanner;
 
 public class Dz3 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MyFormatException {
         String name = null;
         String dateOfBirth = null;
-        //Long phone = 0;
         char gender = 'a';
-        boolean flag = false;
-
-        /*
 
 //ввод ФИО
-        while (!flag) {
-            Scanner scan = new Scanner(System.in);
-            System.out.println("Введите ФИО: ");
-            name = scan.nextLine();
-            String[] splitedName = name.split(" ");
-            if (splitedName.length == 3) {
-                for (int i = 0; i < splitedName.length; i++) {
-                    System.out.println(splitedName[i]);
-                }
-                flag = true;
-                //scan.close();
-            } else System.out.println("Введите ФИО, разделяя пробелами");
-            // scan.close();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Введите ФИО: ");
+        name = scan.nextLine();
+        String rezName = null;
+        String[] splitedName = name.split(" ");
+        if (splitedName.length == 3) rezName = String.join(", ", splitedName);
+        if (rezName != null) {
+            System.out.println(rezName);
+        } else {
+            System.out.println("ФИО заданы в неверном формате, необходимо ввести через пробел");
+            throw new MyFormatException();
         }
-
-
 
         //ввод даты рождения
-        flag = false;
-        while (!flag) {
-            Scanner scan = new Scanner(System.in);
-            System.out.println("Введите дату рождения в формате: dd.mm.yyyy: ");
-            dateOfBirth = scan.nextLine();
-            String[] splitedDateOfBirth = dateOfBirth.split("\\.");
-            if ((splitedDateOfBirth.length == 3)& (Integer.parseInt(splitedDateOfBirth[0]) < 32) & (Integer.parseInt(splitedDateOfBirth[0]) > 0) & (Integer.parseInt(splitedDateOfBirth[1]) > 0) & (Integer.parseInt(splitedDateOfBirth[1]) < 13) & (Integer.parseInt(splitedDateOfBirth[2]) > 0) & (Integer.parseInt(splitedDateOfBirth[2]) < 2024)) {
-                for (int i = 0; i < splitedDateOfBirth.length; i++) {
-                    System.out.println(splitedDateOfBirth[i]);
-                }
-                flag = true;
-                scan.close();
-            }
+        scan = new Scanner(System.in);
+        System.out.println("Введите дату рождения в формате: dd.mm.yyyy: ");
+        dateOfBirth = scan.nextLine();
+        String rezDateOfBirth = null;
+        String[] splitedDateOfBirth = dateOfBirth.split("\\.");
+        if ((splitedDateOfBirth.length == 3) & (Integer.parseInt(splitedDateOfBirth[0]) < 32) & (Integer.parseInt(splitedDateOfBirth[0]) > 0) & (Integer.parseInt(splitedDateOfBirth[1]) > 0) & (Integer.parseInt(splitedDateOfBirth[1]) < 13) & (Integer.parseInt(splitedDateOfBirth[2]) > 0) & (Integer.parseInt(splitedDateOfBirth[2]) < 2024)) {
+            rezDateOfBirth = String.join(".", splitedDateOfBirth);
         }
+        if (rezDateOfBirth != null) {
+            System.out.println(rezDateOfBirth);
+        } else {
+            System.out.println("Дата рождения задана в неверном формате, необходимо ввести чв формате: dd.mm.yyyy: ");
+            throw new MyFormatException();
+        }
+
 
         //ввод телефона
 
-        flag = false;
-        while (!flag) {
-            Scanner scan = new Scanner(System.in);
-            System.out.println("Введите номер телефона XXXXXXXXXXX: ");
-            String phoneStr = scan.nextLine();
-            if (phoneStr.length()==11) {
-               Long phone = Long.parseLong(phoneStr);
-                flag = true;
-                scan.close();
-                System.out.println(phone);
-            }
+
+        scan = new Scanner(System.in);
+        System.out.println("Введите номер телефона XXXXXXXXXXX: ");
+        String phoneStr = scan.nextLine();
+        if (phoneStr.length() == 11) {
+            Long phone = Long.parseLong(phoneStr);
+            System.out.println(phone);
         }
-*/
+
+
         //ввод пола
 
-        flag = false;
-        while (!flag) {
-            Scanner scan = new Scanner(System.in);
-            System.out.println("Введите пол (мужской - 'm', женский - 'f'): ");
-            gender = scan.next().charAt(0);
-            if ((gender == 'f')|(gender == 'm')) {
-                flag = true;
-                scan.close();
-                System.out.println(gender);
-            }
+        scan = new Scanner(System.in);
+        System.out.println("Введите пол (мужской - 'm', женский - 'f'): ");
+        gender = scan.next().charAt(0);
+        String rezGender = null;
+        if ((gender == 'f') | (gender == 'm')) rezGender = String.valueOf(gender);
+
+        if (rezGender != null) {
+            System.out.println(rezGender);
+        } else {
+            System.out.println("Пол задан в неверном формате");
+            throw new MyFormatException();
         }
-
-
     }
+
 }
+
