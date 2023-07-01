@@ -76,7 +76,7 @@ public class Dz3 {
                 scan.close();
             }
         }
-*/
+
         //ввод телефона
 
         flag = false;
@@ -91,8 +91,20 @@ public class Dz3 {
                 System.out.println(phone);
             }
         }
-
+*/
         //ввод пола
+
+        flag = false;
+        while (!flag) {
+            Scanner scan = new Scanner(System.in);
+            System.out.println("Введите пол (мужской - 'm', женский - 'f'): ");
+            gender = scan.next().charAt(0);
+            if ((gender == 'f')|(gender == 'm')) {
+                flag = true;
+                scan.close();
+                System.out.println(gender);
+            }
+        }
 
 
     }
